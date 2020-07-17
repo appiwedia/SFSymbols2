@@ -13,11 +13,11 @@ struct ContentView: View {
             Image(systemName: "thermometer.sun.fill")
                 .renderingMode(.original)
                 .padding(30)
-                .font(.system(size: 100))
+                .font(.system(size: 50))
                 .background(Color.gray)
                 .clipShape(Circle())
                 
-            Text("30 °")
+            Text("27 °")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 
@@ -27,6 +27,17 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                .previewDisplayName("iPhone SE")
+                .previewDevice("iPhone SE (1st generation)")
+            ContentView()
+                .preferredColorScheme(.dark)
+                .previewDevice("iPhone SE (1st generation)")
+            ContentView()
+                .previewDisplayName("iPad Pro")
+                .preferredColorScheme(.light)
+                .previewDevice("iPad Pro (12.9-inch) (4th generation)")
+        }
     }
 }
