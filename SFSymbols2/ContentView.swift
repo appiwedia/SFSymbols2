@@ -9,7 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!").padding()
+        VStack {
+            Image(systemName: "thermometer.sun.fill")
+                .renderingMode(.original)
+                .padding(30)
+                .font(.system(size: 100))
+                .background(Color.gray)
+                .clipShape(Circle())
+                
+            Text("30 °")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                
+        }
     }
 }
 
